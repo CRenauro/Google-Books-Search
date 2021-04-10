@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
+import { ListItem } from "../List";
 
 class Home extends Component {
   state = {
@@ -84,15 +85,24 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-              <Book
-               title={Book.volumeInfo.title}
-               subtitle={Book.subtitle}
-               link={Book.link}
-               authors={Book.authors}
-               description={Book.description}
-               image={Book.image}
-               Button={Book.Button}
-              />
+            {books.length ? (
+              <List>
+                {books.map(book => {
+                  return (
+                    <ListItem key={book._id}>
+                      <a href={"/books/" + book._id}>
+                        <strong>
+                          {book.title} by {book.author}
+                        </strong>
+                      </a>
+                      {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
+                    </ListItem>
+                  );
+                })}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
             </Card>
           </Col>
         </Row>
