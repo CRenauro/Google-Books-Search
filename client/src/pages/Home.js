@@ -95,7 +95,7 @@ class Home extends Component {
                 </ListItem>
               ))} */}
                 {this.state.books.map (book => (
-              <Book book={book} />
+              <Book book={this.state.book} />
 
                 ))}
             </Card>
