@@ -84,20 +84,15 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-              {/* {books.map(book => (
-                <ListItem key={book._id}>
-                <Link to={"/books/" + book._id}>
-                <strong>
-                {book.title} by {book.author}
-                </strong>
-                </Link>
-                <DeleteBtn onClick={() => deleteBook(book._id)} />
-                </ListItem>
-              ))} */}
-                {this.state.books.map (book => (
-              <Book book={this.state.book} />
-
-                ))}
+              <Book
+               title={Book.volumeInfo.title}
+               subtitle={Book.subtitle}
+               link={Book.link}
+               authors={Book.authors}
+               description={Book.description}
+               image={Book.image}
+               Button={Book.Button}
+              />
             </Card>
           </Col>
         </Row>
