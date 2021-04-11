@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer>
       <hr />
-      <p className="pull-right">
-        <i className="fab fa-github" /> Proudly built using React.js
+      <p className="pull-right text-white">
+        <i className="fab fa-github" /> Proudly built on a Mac using React.js
       </p>
     </footer>
   );

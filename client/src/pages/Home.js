@@ -7,7 +7,8 @@ import Footer from "../components/Footer";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
-import { ListItem } from "../List";
+import './style.css'
+
 
 class Home extends Component {
   state = {
@@ -59,13 +60,12 @@ class Home extends Component {
 
   render() {
     return (
-      // <div></div>
       <Container>
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
+                <strong>Google Books Search</strong>
               </h1>
               <h2 className="text-center">
                 Search for and Save Books of Interest.
@@ -85,20 +85,27 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-            {books.length ? (
+            {this.state.books.length ? (
               <List>
-                {books.map(book => {
-                  return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
-                        <strong>
-                          {book.title} by {book.author}
-                        </strong>
-                      </a>
-                      {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
-                    </ListItem>
-                  );
-                })}
+                {this.state.books.map((book) => (
+                      <Book
+                        key={ book.id }
+                        title={ book.volumeInfo.title }
+                        subtitle= { book.volumeInfo.subtitle }
+                        link= { book.volumeInfo.infoLink }
+                        authors= { book.volumeInfo.authors.join(',')}
+                        description= { book.volumeInfo.description }
+                        image= { book.volumeInfo.imageLinks.thumbnail }
+                        Button={() => (
+                          <button
+                            onClick={() => this.handleBookSave( book.id )}
+                            className="btn btn-primary ml-2" >
+                              Save
+                            </button>
+                        )}
+                      />
+                    )
+                 )}
               </List>
             ) : (
               <h3>No Results to Display</h3>

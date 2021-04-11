@@ -14,7 +14,7 @@ function App() {
           <Route exact path={"/"}>
             <Home />
           </Route>
-          <Route exact path="/Saved/:id">
+          <Route exact path="/Saved">
             <Saved />
           </Route>
           <Route>
