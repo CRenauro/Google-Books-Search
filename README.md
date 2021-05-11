@@ -1,11 +1,19 @@
-# Google-Books-Search
+<h1 align="center">Welcome to Google Books Search 👋</h1>
 
-![Google-Books-Search-1](https://user-images.githubusercontent.com/71401585/114323351-c30b6880-9af2-11eb-9366-31f9915999c3.jpg)
-![Google-Books-Saved-1](https://user-images.githubusercontent.com/71401585/114323353-c56dc280-9af2-11eb-890a-bfc03bb6665b.jpg)
+# Install
+
+Open https://googlebookscr.herokuapp.com in your browser.
+
+# Usage
+
+![Google-Books-Search-1](./client/images/Google-Books-Search-1.jpg)
+![Google-Books-Saved-1](./client/images/Google-Books-Saved-1.jpg)
+
+Users can search for books, save them in a list to review and delete them from the list.
 
 # Description
 
-An app using Node, React, Express, and MongoDB. Users can search for books, save them in a list to review and delete them from the list.
+A React-based app using MERN - MongoDB, Express, React and, Node.
 
 # Credits
 
